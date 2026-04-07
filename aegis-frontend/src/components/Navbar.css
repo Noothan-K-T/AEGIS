@@ -1,0 +1,116 @@
+.navbar {
+  height: 90px;
+  padding: 0 40px;
+  background: rgba(0, 15, 25, 0.85);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 1000;
+
+  border-bottom: 1px solid rgba(0, 224, 255, 0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LEFT */
+.brand {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px #00f5ff;
+  animation: float 3s ease-in-out infinite;
+  display: inline-block;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px); /* Moves up 10 pixels */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.brand-name {
+  font-size: 24px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.brand-divider {
+  color: #ffffff;
+}
+
+.brand-module {
+  font-size: 12px;
+  color: #7c8ba1;
+}
+
+/* CENTER METRICS */
+.center-metrics {
+  display: flex;
+  gap: 40px;
+}
+
+.metric {
+  text-align: center;
+}
+
+.metric-value {
+  display: block;
+  font-size: 20px;
+  color: #d0ff00;
+  font-weight: 600;
+}
+
+.metric-label {
+  font-size: 10px;
+  color: #d0ff00;
+  letter-spacing: 1px;
+}
+
+/* RIGHT */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.live-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #00ffb3;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  background: #00ffb3;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #00ffb3;
+}
+
+.time {
+  margin-left: 30px;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.live-status.status-error { color: #ef4444; }
+
+.dot-error {
+  background: #ef4444 !important;
+  box-shadow: 0 0 6px #ef4444 !important;
+  animation: pulseDot 1s infinite;
+}

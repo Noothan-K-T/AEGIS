@@ -1,0 +1,244 @@
+/* ══════════════════════════════════════════════════════════════════
+   LIVE MAP — Command Center Layout
+   ══════════════════════════════════════════════════════════════════ */
+
+.live-map-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px); /* Adjust based on navbar height */
+  padding: 20px;
+  gap: 16px;
+  color: #e2e8f0;
+}
+
+.map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.map-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #c8d8e8;
+}
+
+.map-header p {
+  font-size: 11px;
+  color: #64748b;
+  margin: 2px 0 0 0;
+}
+
+/* ── Main Layout ── */
+.map-container-layout {
+  display: flex;
+  flex: 1;
+  gap: 16px;
+  min-height: 0; /* Important for flex child with overflow */
+}
+
+/* ── Left Pane (Map) ── */
+.map-view-pane {
+  flex: 1;
+  background: #060e1f;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Float controls on map */
+.map-search-overlay {
+  position: absolute;
+  top: 16px;
+  left: 56px; /* Offset from leaflet zoom controls */
+  z-index: 1000;
+  display: flex;
+  gap: 8px;
+}
+
+.search-input-wrap {
+  display: flex;
+  background: #0a1628cc;
+  backdrop-filter: blur(8px);
+  border: 1px solid #00e0ff44;
+  border-radius: 8px;
+  padding: 4px 12px;
+  width: 320px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input-wrap:focus-within {
+  border-color: #00e0ff;
+  box-shadow: 0 0 12px #00e0ff33;
+}
+
+.search-input-wrap input {
+  background: transparent;
+  border: none;
+  color: #e2e8f0;
+  font-size: 13px;
+  width: 100%;
+  padding: 8px 0;
+  outline: none;
+}
+
+.search-icon {
+  display: flex;
+  align-items: center;
+  color: #64748b;
+  margin-right: 8px;
+}
+
+/* ── Right Pane (Live Feed / Sidebar) ── */
+.map-sidebar {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidebar-section {
+  background: #060e1f;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.section-header {
+  padding: 12px 16px;
+  background: #0a1628;
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header h3 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #22c55e;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ── Camera List ── */
+.camera-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.camera-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border: 1px solid transparent;
+}
+
+.camera-item:hover {
+  background: #1e293b55;
+}
+
+.camera-item.active {
+  background: #1e293b;
+  border-color: #00e0ff44;
+}
+
+.cam-icon {
+  font-size: 16px;
+  margin-right: 12px;
+  color: #00e0ff;
+}
+
+.cam-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.cam-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.cam-status {
+  font-size: 10px;
+  color: #64748b;
+}
+
+/* ── Recent Alerts Panel ── */
+.alerts-mini-feed {
+  height: 200px;
+  padding: 8px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mini-alert {
+  padding: 10px;
+  background: #0a1628;
+  border-left: 3px solid #3b82f6;
+  border-radius: 4px;
+  animation: slideLeft 0.3s ease;
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.ma-time { font-size: 10px; color: #475569; }
+.ma-msg { font-size: 12px; color: #94a3b8; margin: 2px 0; }
+.ma-loc { font-size: 10px; color: #3b82f6; font-weight: 600; }
+
+/* Custom leaflet tweaks */
+.leaflet-container {
+  background: #020917 !important;
+}
+
+.camera-active .leaflet-tooltip-content {
+  background: #7f1d1d !important;
+  color: white !important;
+  border: 1px solid #ef4444 !important;
+}
+
+.camera-inactive .leaflet-tooltip-content {
+  background: #0a1628 !important;
+  color: #94a3b8 !important;
+  border: 1px solid #1e293b !important;
+}

@@ -1,0 +1,136 @@
+/* ══════════════════════════════════════════════════════════════════
+   ANALYTICS PAGE
+   ══════════════════════════════════════════════════════════════════ */
+
+.analytics {
+  padding: 24px;
+  color: #e2e8f0;
+}
+
+/* ── Header ──────────────────────────────────────────────────────── */
+
+.analytics-header { margin-bottom: 18px; }
+
+.analytics-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 3px 0;
+}
+
+.analytics-subtitle {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── Stat Cards ───────────────────────────────────────────────────── */
+
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: #060e1f;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.stat-card:hover { border-color: #334155; }
+
+.stat-icon  { font-size: 20px; }
+.stat-value { font-size: 22px; font-weight: 700; line-height: 1; }
+.stat-label { font-size: 10px; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ── Charts grid ──────────────────────────────────────────────────── */
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.chart-card {
+  background: #060e1f;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.chart-card h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #c8d8e8;
+  margin: 0 0 14px 0;
+}
+
+.chart-tag {
+  font-size: 10px;
+  color: #475569;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.chart-card.large { grid-column: span 1; }
+.chart-card.wide  { grid-column: 1 / -1; }
+
+/* ── Empty chart placeholder ──────────────────────────────────────── */
+
+.empty-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  color: #334155;
+  font-size: 12px;
+}
+
+/* ── Pie legend ───────────────────────────────────────────────────── */
+
+.pie-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 180px;
+}
+
+.pie-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-val {
+  margin-left: auto;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+
+@media (max-width: 1000px) {
+  .stat-cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 750px) {
+  .analytics-grid { grid-template-columns: 1fr; }
+  .stat-cards     { grid-template-columns: repeat(2, 1fr); }
+}
