@@ -176,6 +176,23 @@ The query image is converted into an embedding using the same embedding pipeline
 
 Matches are ranked according to similarity and filtered using the configured confidence threshold before being presented to the user.
 
+## System Architecture
+
+![AEGIS System Architecture](architecture/System-architecture.jpeg)
+## Cloud Architecture
+
+![AEGIS Cloud Architecture](architecture/Cloud-architecture.jpeg)
+
+## Sequence Diagrams
+
+### Edge-to-Cloud Ingestion
+
+![AEGIS Edge Ingestion Sequence](architecture/Sequence-diagram1.jpeg)
+
+### User Search
+
+![AEGIS User Search Sequence](architecture/Sequence-diagram2.jpeg)
+
 ---
 
 ## My Contribution
@@ -331,6 +348,14 @@ User-facing intelligence
 ```
 
 Rather than treating computer vision as an isolated model, AEGIS integrates hardware, inference, networking, cloud infrastructure, vector search, and application interfaces into a single system.
+
+### Edge-to-Cloud Ingestion
+
+![AEGIS Visualization](architecture/Dashboard.jpeg)
+
+![AEGIS Visualization](architecture/results.jpeg)
+
+![AEGIS Visualization](architecture/output.jpeg)
 
 ---
 
