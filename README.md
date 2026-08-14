@@ -241,8 +241,6 @@ AEGIS/
 │   ├── system-architecture.png
 │   ├── cloud-architecture.png
 │   └── sequence-diagram.png
-│
-├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
@@ -377,7 +375,7 @@ The system has been implemented and tested across the edge, communication, cloud
 
 ---
 
-## Author
+## Authors
 
 ### Noothan K T
 ### Prabhat M Masali
